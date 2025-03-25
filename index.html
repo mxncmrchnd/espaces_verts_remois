@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Les espaces verts rémois</title>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+        <script type="text/javascript" src="./iris_ev_reims.json"></script>
+        <script type="text/javascript" src="./parc_markers.json"></script>
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet" />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div id="bandeau">
+            <h1>Les espaces verts à Reims</h1>
+        </div>
+        <table>
+            <tr>
+                <td>
+                    <div id="mapid"></div>
+                </td>
+                <td>
+                    <div id="graph"></div>
+                </td>
+            </tr>
+        </table>
+        <div id="infog"></div>
+        <script type="text/javascript" src="./leaflet_code.js"></script>
+        <script type="text/javascript" src="./d3js_code.js"></script>
+    </body>
+</html>
