@@ -1,8 +1,7 @@
 const tooltip = d3.select("#graph").append("div").attr("class", "tooltip");
-d3.csv("./data.csv");
-const margin = { top: 40, right: 60, bottom: 40, left: 60 },
+const margin = { top: 40, right: 20, bottom: 40, left: 60 },
     width = 800 - margin.left - margin.right,
-    height = 300 - margin.top - margin.bottom;
+    height = 400 - margin.top - margin.bottom;
 const svg = d3
     .select("#graph")
     .append("svg")
@@ -33,7 +32,7 @@ svg.selectAll(".layer")
     .data((d) => d)
     .enter()
     .append("rect")
-    .attr("x", (d) => x(d.data.NOM_IRIS))
+    .attr("x", (d) => x(d.data.fid))
     .attr("y", (d) => y(d[1]))
     .attr("height", (d) => y(d[0]) - y(d[1]))
     .attr("width", x.bandwidth())

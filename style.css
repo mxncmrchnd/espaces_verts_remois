@@ -23,13 +23,11 @@ td {
 #mapid {
     height: 100%;
     width: 100%;
-    border: double;
 }
 
 #graph {
     height: 50%;
     width: 100%;
-    border: double;
 }
 
 #infog {

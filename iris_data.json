@@ -1,4 +1,4 @@
-var iris_data = [
+var data = [
   {
     "fid": 1,
     "ID": "IRIS____0000000514541401",
