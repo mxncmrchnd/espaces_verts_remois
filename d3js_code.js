@@ -1,5 +1,5 @@
 const tooltip = d3.select("#graph").append("div").attr("class", "tooltip");
-var iris_data = d3.csv("./data.csv");
+d3.csv("./data.csv");
 const margin = { top: 40, right: 60, bottom: 40, left: 60 },
     width = 800 - margin.left - margin.right,
     height = 300 - margin.top - margin.bottom;
@@ -17,12 +17,12 @@ const x = d3
     .padding(0.1);
 const y = d3
     .scaleLinear()
-    .domain([0, d3.max(iris_data, (d) => d.veg_surface + d.iris_surface)])
+    .domain([0, d3.max(data, (d) => d.veg_surface + d.iris_surface)])
     .nice()
     .range([height, 0]);
 const color = d3.scaleOrdinal().domain(["veg_surface", "iris_surface_vg"]).range(["#005a32", "#00608f"]);
 const stack = d3.stack().keys(["veg_surface", "iris_surface_vg"]);
-const stackedData = stack(iris_data);
+const stackedData = stack(data);
 svg.selectAll(".layer")
     .data(stackedData)
     .enter()
