@@ -1,5 +1,5 @@
 const tooltip = d3.select("#graph").append("div").attr("class", "tooltip");
-d3.csv("./data.csv");
+var data = d3.csv("./data.csv");
 const margin = { top: 40, right: 60, bottom: 40, left: 60 },
     width = 800 - margin.left - margin.right,
     height = 300 - margin.top - margin.bottom;
