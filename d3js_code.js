@@ -1,7 +1,7 @@
 const tooltip = d3.select("#graph").append("div").attr("class", "tooltip");
-const margin = { top: 40, right: 20, bottom: 40, left: 60 },
-    width = 800 - margin.left - margin.right,
-    height = 400 - margin.top - margin.bottom;
+const margin = { top: 10, right: 20, bottom: 200, left: 60 },
+    width = 1400 - margin.left - margin.right,
+    height = 600 - margin.top - margin.bottom;
 const svg = d3
     .select("#graph")
     .append("svg")
@@ -11,7 +11,7 @@ const svg = d3
     .attr("transform", `translate(${margin.left},${margin.top})`);
 const x = d3
     .scaleBand()
-    .domain(data.map((d) => d.fid))
+    .domain(data.map((d) => d.NOM_IRIS).sort())
     .range([0, width])
     .padding(0.1);
 const y = d3
@@ -32,14 +32,16 @@ svg.selectAll(".layer")
     .data((d) => d)
     .enter()
     .append("rect")
-    .attr("x", (d) => x(d.data.fid))
+    .attr("x", (d) => x(d.data.NOM_IRIS))
     .attr("y", (d) => y(d[1]))
     .attr("height", (d) => y(d[0]) - y(d[1]))
     .attr("width", x.bandwidth())
     .on("mouseover", function (event, d) {
         tooltip.transition().duration(50).style("opacity", 0.9); // Rendre le tooltip visible
         tooltip
-            .html(`${d.data.NOM_IRIS}<br>Surface végétalisée (en ha): ${d.data.veg_surface}<br>Surface totale (en ha) : ${d.data.iris_surface}`)
+            .html(
+                `${d.data.NOM_IRIS}<br>Surface végétalisée (en ha): ${d.data.veg_surface}<br>Surface totale (en ha) : ${d.data.iris_surface}`
+            )
             .style("left", event.pageX + 5 + "px") // Positionner à côté du curseur
             .style("top", event.pageY - 28 + "px");
     })
@@ -47,7 +49,16 @@ svg.selectAll(".layer")
     .on("mouseout", function () {
         tooltip.transition().duration(500).style("opacity", 0); // Masquer le tooltip
     });
-svg.append("g").attr("class", "axis x-axis").attr("transform", `translate(0,${height})`).call(d3.axisBottom(x));
+svg.append("g")
+    .attr("class", "axis x-axis")
+    .attr("transform", `translate(0,${height})`)
+    .call(d3.axisBottom(x))
+    .selectAll("text")
+    .attr("y", 0)
+    .attr("x", 9)
+    .attr("dy", ".35em")
+    .attr("transform", "rotate(90)")
+    .style("text-anchor", "start");
 
 svg.append("g").attr("class", "axis y-axis").call(d3.axisLeft(y));
 console.log("d3js");

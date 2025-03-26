@@ -1,7 +1,7 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>Les espaces verts rémois</title>
+        <title>Reims et ses espaces verts</title>
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
         <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
         <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -19,7 +19,8 @@
     </head>
     <body>
         <div id="bandeau">
-            <h1>Les espaces verts à Reims</h1>
+            <img id="reims" src='./images/reims_logo.png'>
+            <h1>Reims et ses espaces verts</h1>   
         </div>
         <table>
             <tr>
@@ -27,12 +28,29 @@
                     <div id="mapid"></div>
                 </td>
                 <td>
-                    <div id="graph"></div>
+                    <div id="description">
+                        <h2>Description des données</h2>
+                        <p>
+                            Cette carte représente les proportions d'espaces verts par quartier (base IRIS de l'INSEE) de la ville de Reims.
+                            Les données d'espaces verts sont issues de la <a href='https://data.geopf.fr/telechargement/download/BDTOPO/BDTOPO_3-4_TOUSTHEMES_SHP_LAMB93_D051_2024-12-15/BDTOPO_3-4_TOUSTHEMES_SHP_LAMB93_D051_2024-12-15.7z'>BD TOPO</a> de l'IGN (couche <i>ESPACES_VERTS</i>), et ont été découpés suivant le découpage en <a href='https://data.geopf.fr/telechargement/download/IRIS-GE/IRIS-GE_3-0__SHP_LAMB93_FXX_2024-01-01/IRIS-GE_3-0__SHP_LAMB93_FXX_2024-01-01.7z'>Ilots Regroupés pour l'Information Statistique (IRIS)</a> d'après l'INSEE.
+                            De plus, six des principaux parcs de la ville sont représentés : le Square Colbert, le Parc de la Patte d'Oie, le Parc Léo Lagrange, le Parc des Buttes de la Muire, le Parc des Arènes du Sud (désormais domicile du célèbre Luchrone) et le Parc de Champagne.
+                            <br>
+                            Carte réalisée avec <a href='https://leafletjs.com/'><i>Leaflet</i></a>, fonds de carte : <i>OpenStreetMap</i>, <i>ESRI</i> et <i>CartoDB</i>.
+                            <br>
+                            L'histogramme ci-dessous représente la même information que la carte, mais sans la composante géographique.
+                            En bleu est représentée la surface totale de l'IRIS, tandis qu'en vert (peu visible sur la plupart des IRIS, à cause de leur faible proportion) est représentée la surface en espaces verts.
+                            <br>
+                            Graphique réalisé avec <a href='https://d3js.org/'><i>D3.js</i></a>.
+                        </p>
+                    </div>
                 </td>
             </tr>
         </table>
+        <div id="graph"></div>
         <div id="infog"></div>
+        <p>Source de l'image : Garitan, <a href='https://commons.wikimedia.org/wiki/File:Parc_de_champagne_225.JPG'><i>Parc de Champagne, ancien Parc Pommery</i></a>, 2012</p>
         <script type="text/javascript" src="./leaflet_code.js"></script>
         <script type="text/javascript" src="./d3js_code.js"></script>
+        
     </body>
 </html>

@@ -45,7 +45,7 @@ function style(feature) {
     return {
         weight: 0.5,
         opacity: 1,
-        color: "white",
+        color: "#999999",
         dashArray: "3",
         fillOpacity: 0.5,
         fillColor: getColor(feature.properties.part_vege)
