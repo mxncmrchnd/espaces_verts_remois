@@ -61,4 +61,3 @@ svg.append("g")
     .style("text-anchor", "start");
 
 svg.append("g").attr("class", "axis y-axis").call(d3.axisLeft(y));
-console.log("d3js");
