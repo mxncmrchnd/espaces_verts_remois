@@ -48,9 +48,9 @@ a {
 }
 
 #description {
-    padding-left: 5pt;
+    padding: 15pt;
     height: 100%;
-    width: 50%;
+    width: 90%;
 }
 
 #graph {

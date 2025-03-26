@@ -1,5 +1,5 @@
 const tooltip = d3.select("#graph").append("div").attr("class", "tooltip");
-const margin = { top: 10, right: 20, bottom: 200, left: 60 },
+const margin = { top: 40, right: 20, bottom: 200, left: 60 },
     width = 1400 - margin.left - margin.right,
     height = 600 - margin.top - margin.bottom;
 const svg = d3
@@ -11,15 +11,15 @@ const svg = d3
     .attr("transform", `translate(${margin.left},${margin.top})`);
 const x = d3
     .scaleBand()
-    .domain(data.map((d) => d.NOM_IRIS).sort())
+    .domain(data.map((d) => d.NOM_IRIS))
     .range([0, width])
     .padding(0.1);
 const y = d3
     .scaleLinear()
-    .domain([0, d3.max(data, (d) => d.veg_surface + d.iris_surface)])
+    .domain([0, 30])
     .nice()
     .range([height, 0]);
-const color = d3.scaleOrdinal().domain(["veg_surface", "iris_surface_vg"]).range(["#005a32", "#00608f"]);
+const color = d3.scaleOrdinal().domain(["veg_surface", "iris_surface_vg"]).range(["#005a32", "rgba(255, 255, 255, 0)"]);
 const stack = d3.stack().keys(["veg_surface", "iris_surface_vg"]);
 const stackedData = stack(data);
 svg.selectAll(".layer")
@@ -40,7 +40,7 @@ svg.selectAll(".layer")
         tooltip.transition().duration(50).style("opacity", 0.9); // Rendre le tooltip visible
         tooltip
             .html(
-                `${d.data.NOM_IRIS}<br>Surface végétalisée (en ha): ${d.data.veg_surface}<br>Surface totale (en ha) : ${d.data.iris_surface}`
+                `${d.data.NOM_IRIS}<br>Pourcentage de survage végétalisée: ${d.data.veg_surface}%<br>Surface totale (en ha) : ${d.data.iris_surface}`
             )
             .style("left", event.pageX + 5 + "px") // Positionner à côté du curseur
             .style("top", event.pageY - 28 + "px");
