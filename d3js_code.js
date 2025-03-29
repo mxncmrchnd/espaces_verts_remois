@@ -19,7 +19,7 @@ const y = d3
     .domain([0, 30])
     .nice()
     .range([height, 0]);
-const color = d3.scaleOrdinal().domain(["veg_surface", "iris_surface_vg"]).range(["#005a32", "rgba(255, 255, 255, 0)"]);
+const color = d3.scaleOrdinal().domain(["veg_surface", "iris_surface_vg"]).range(["#00608f", "rgba(255, 255, 255, 0)"]);
 const stack = d3.stack().keys(["veg_surface", "iris_surface_vg"]);
 const stackedData = stack(data);
 svg.selectAll(".layer")
