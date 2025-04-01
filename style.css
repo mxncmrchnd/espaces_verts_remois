@@ -25,6 +25,20 @@ button{
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+    border-radius: 4px;
+}
+button:hover{
+    font-family: "Fira Sans", sans-serif;
+    background-color: #ffffff;
+    border: #00608f;
+    color: #00608f;
+    border-width: thick;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 4px;
 }
 .graph {
     height: 100%;
