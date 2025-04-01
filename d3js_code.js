@@ -36,7 +36,7 @@ svg1.selectAll(".layer")
     .attr("x", (d) => x1(d.data.NOM_IRIS))
     .attr("y", (d) => y1(d[1]))
     .attr("height", (d) => y1(d[0]) - y1(d[1]))
-    .attr("width", x.bandwidth())
+    .attr("width", x1.bandwidth())
     .on("mouseover", function (event, d) {
         tooltip1.transition().duration(50).style("opacity", 0.9); // Rendre le tooltip visible
         tooltip1.html(
