@@ -86,7 +86,10 @@ button{
     width: 100%;
     height: 85%;
 }
-#logo{max-height: 25%;}
+#logo{
+    max-width: 15%
+    max-height: 15%;
+}
 #titre{width:90%;}
 #mapid {
     height: 100%;
