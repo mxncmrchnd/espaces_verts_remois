@@ -30,6 +30,7 @@ button{
 button:hover{
     font-family: "Fira Sans", sans-serif;
     background-color: #ffffff;
+    border: solid;
     border-color: #00608f;
     color: #00608f;
     border-width: thick;
