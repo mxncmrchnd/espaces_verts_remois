@@ -2,22 +2,27 @@
     <head>
         <meta charset="utf-8" />
         <title>Reims et ses espaces verts</title>
+
+        <!-- import des libraires-->
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
         <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <script src="https://d3js.org/d3.v7.min.js"></script>
+
+        <!--import des données-->
         <script type="text/javascript" src="./iris_ev_reims.json"></script>
         <script type="text/javascript" src="./parc_markers.json"></script>
         <script type="text/javascript" src="./iris_data.json"></script>
-        
+
+        <!--import des polices et du CSS-->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-            rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
         <link rel="stylesheet" href="style.css" />
     </head>
+    
     <body>
+        <!-- bandeau de titre-->
         <div id="bandeau">
             <div id="reims">
                 <img id="logo" src="images/reims_logo.png"/>
@@ -26,6 +31,8 @@
                 <h1>Reims et ses espaces verts</h1>
             </div>
         </div>
+
+        <!-- affichage de la carte et du texte de description-->
         <table id="contents">
             <tr>
                 <td class="col">
@@ -49,10 +56,16 @@
                 </td>
             </tr>
         </table>
+
+        <!--affichage du graphe-->
         <button id="cg" type="button">Changer l'ordre d'affichage</button>
         <div class="graph" id="graph1"></div>
         <div class="graph" id="graph2"></div>
+
+        <!--affichage de l'infographie-->
         <div id="infog"></div>
+
+        <!--affichage des crédits-->
         <p>Source de l'image de fond : Garitan, <a href='https://commons.wikimedia.org/wiki/File:Parc_de_champagne_225.JPG'><i>Parc de Champagne, ancien Parc Pommery</i></a>, 2012</p>
         <p>Crédits photos : Ville de Reims</p>
         <script type="text/javascript" src="./leaflet_code.js"></script>
@@ -60,6 +73,22 @@
         <div id="footer">
             MARCHAND Maxence, Master 1 Observation de la Terre et Géomatique, Université de Strasbourg
         </div>
+
+        <!--script jquery pour l'affichage des graphes-->
+        <script>
+            var gr1 = document.getElementById("graph1");
+            var gr2 = document.getElementById("graph2");
+            $("#cg").click(function(){
+                  if(gr1.style.display !="none"){
+                      gr1.style.display = "none";
+                      gr2.style.display = "block";
+                  }
+                else{
+                      gr1.style.display = "block";
+                      gr2.style.display = "none";
+                  }
+            });
+        </script>
         
     </body>
 </html>
