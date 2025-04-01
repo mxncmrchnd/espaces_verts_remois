@@ -21,6 +21,7 @@ body {
 svg {
     margin-left: auto;
     margin-right: auto;
+    height: 100%;
 }
 p {
     text-align: justify;
