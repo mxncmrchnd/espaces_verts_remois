@@ -12,7 +12,7 @@ const svg1 = d3
     .attr("transform", `translate(${margin.left},${margin.top})`);
 const x1 = d3
     .scaleBand()
-    .domain(data.map((d) => d.NOM_IRIS))
+    .domain(data.map((d) => d.NOM_IRIS.sort()))
     .range([0, width])
     .padding(0.1);
 const y1 = d3
