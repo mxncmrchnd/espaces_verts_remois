@@ -59,6 +59,10 @@ a {
     width: 90%;
 }
 
+#graph2{
+    display: none;
+}
+
 .graph {
     height: 100%;
     width: 100%;
