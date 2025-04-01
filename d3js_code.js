@@ -52,7 +52,7 @@ svg1.selectAll(".layer")
 svg1.append("g")
     .attr("class", "axis x-axis")
     .attr("transform", `translate(0,${height})`)
-    .call(d3.axisBottom(x))
+    .call(d3.axisBottom(x1))
     .selectAll("text")
     .attr("y", 0)
     .attr("x", 9)
@@ -60,7 +60,7 @@ svg1.append("g")
     .attr("transform", "rotate(90)")
     .style("text-anchor", "start");
 
-svg1.append("g").attr("class", "axis y-axis").call(d3.axisLeft(y));
+svg1.append("g").attr("class", "axis y-axis").call(d3.axisLeft(y1));
 
 //graphe 2
 const tooltip2 = d3.select("#graph2").append("div").attr("class", "tooltip");
@@ -113,7 +113,7 @@ svg2.selectAll(".layer")
 svg2.append("g")
     .attr("class", "axis x-axis")
     .attr("transform", `translate(0,${height})`)
-    .call(d3.axisBottom(x))
+    .call(d3.axisBottom(x2))
     .selectAll("text")
     .attr("y", 0)
     .attr("x", 9)
@@ -121,4 +121,4 @@ svg2.append("g")
     .attr("transform", "rotate(90)")
     .style("text-anchor", "start");
 
-svg2.append("g").attr("class", "axis y-axis").call(d3.axisLeft(y));
+svg2.append("g").attr("class", "axis y-axis").call(d3.axisLeft(y2));
