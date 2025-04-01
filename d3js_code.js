@@ -1,8 +1,8 @@
 //graphe 1
 const tooltip1 = d3.select("#graph1").append("div").attr("class", "tooltip");
 const margin = { top: 40, right: 20, bottom: 200, left: 60 },
-    width = 1400 - margin.left - margin.right,
-    height = 600 - margin.top - margin.bottom;
+    width = 100% - margin.left - margin.right,
+    height = 100%  - margin.top - margin.bottom;
 const svg1 = d3
     .select("#graph1")
     .append("svg")
