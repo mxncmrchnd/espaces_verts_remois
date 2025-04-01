@@ -20,7 +20,7 @@ const y1 = d3
     .domain([0, 30])
     .nice()
     .range([height, 0]);
-const color1 = d3.scaleOrdinal().domain(["veg_surface", "iris_surface_vg"]).range(["#00608f", "rgba(255, 255, 255, 0)"]);
+const color1 = d3.scaleOrdinal().domain(["veg_surface", "iris_surface_vg"]).range(["#41ab5d", "rgba(255, 255, 255, 0)"]);
 const stack1 = d3.stack().keys(["veg_surface", "iris_surface_vg"]);
 const stackedData1 = stack1(data);
 svg1.selectAll(".layer")
@@ -81,7 +81,7 @@ const y2 = d3
     .domain([0, 30])
     .nice()
     .range([height, 0]);
-const color2 = d3.scaleOrdinal().domain(["veg_surface", "iris_surface_vg"]).range(["#00608f", "rgba(255, 255, 255, 0)"]);
+const color2 = d3.scaleOrdinal().domain(["veg_surface", "iris_surface_vg"]).range(["#41ab5d", "rgba(255, 255, 255, 0)"]);
 const stack2 = d3.stack().keys(["veg_surface", "iris_surface_vg"]);
 const stackedData2 = stack2(data);
 svg2.selectAll(".layer")
