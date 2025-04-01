@@ -1,6 +1,6 @@
 //graphe 1
 const tooltip1 = d3.select("#graph1").append("div").attr("class", "tooltip");
-const margin1 = { top: 40, right: 20, bottom: 200, left: 60 },
+const margin = { top: 40, right: 20, bottom: 200, left: 60 },
     width = 1400 - margin.left - margin.right,
     height = 600 - margin.top - margin.bottom;
 const svg1 = d3
@@ -64,9 +64,6 @@ svg1.append("g").attr("class", "axis y-axis").call(d3.axisLeft(y));
 
 //graphe 2
 const tooltip2 = d3.select("#graph2").append("div").attr("class", "tooltip");
-const margin2 = { top: 40, right: 20, bottom: 200, left: 60 },
-    width = 1400 - margin.left - margin.right,
-    height = 600 - margin.top - margin.bottom;
 const svg2 = d3
     .select("#graph")
     .append("svg")
