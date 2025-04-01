@@ -65,7 +65,7 @@ svg1.append("g").attr("class", "axis y-axis").call(d3.axisLeft(y1));
 //graphe 2
 const tooltip2 = d3.select("#graph2").append("div").attr("class", "tooltip");
 const svg2 = d3
-    .select("#graph")
+    .select("#graph2")
     .append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
