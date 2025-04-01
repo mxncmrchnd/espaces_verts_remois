@@ -86,11 +86,11 @@ button{
     width: 100%;
     height: 85%;
 }
-#reims{width:10%;}
-#titre{width:90%;}
+#reims{width:5%;}
+#titre{width:95%;}
 #logo{
-    max-width: 15%;
-    max-height: 15%;
+    max-width: 25%;
+    max-height: 25%;
 }
 
 #mapid {
