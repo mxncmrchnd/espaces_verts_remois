@@ -67,7 +67,7 @@ function onEachMarker(feature, layer) {
 legend.onAdd = function (map) {
     var div = L.DomUtil.create("div", "info legend"),
         grades = [0, 0.05, 0.1, 0.15, 0.2, 0.25],
-        labels = ["<strong> Proportion d" + "'" + "espaces verts<br></strong>(en m²/m²)"],
+        labels = ["<strong> Proportion d" + "'" + "espaces verts<br></strong>(en ha/ha)"],
         from,
         to;
     for (var i = 0; i < grades.length; i++) {
